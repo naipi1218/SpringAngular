@@ -47,5 +47,5 @@ jobs:
         with:
           context: .
           push: true
-       
+          tags: naipi1218/SpringAngular:latest
        
