@@ -7,7 +7,7 @@
       function Hello($scope, $http) {
         $scope.getUserDetails = function()
         {
-           $http.get('http://localhost:8000/SpringMVC_AngularJS_Example/userdetails').
+           $http.get('http://localhost:8080/SpringMVC_AngularJS_Example/userdetails').
            success(function(data) {
            $scope.user = data;
         });
