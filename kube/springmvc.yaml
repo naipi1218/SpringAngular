@@ -1,0 +1,35 @@
+# ... Deployment YAML definition
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+ name: springmvc
+spec:
+ replicas: 1
+ selector: 
+    matchLabels: 
+        app: springmvc
+ template:
+    metadata:
+        labels:
+            app: springmvc
+    spec:
+        containers:
+          - name: springmvc
+            image: naipi1218/springmvc:latest
+            ports:
+             - containerPort: 8080
+
+---
+# ... Service YAML definition
+
+apiVersion: v1            
+kind: Service
+metadata:
+  name: springmvc
+spec:
+  selector:
+    app: springmvc
+  ports:
+   - port: 80
+     targetPort: 8080
+  type: LoadBalancer
